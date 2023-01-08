@@ -75,6 +75,30 @@ class SinglyLinkedList {
         return currentHead //this is what we took off
     }
 
+    /*
+    ------- Pseudocode for Singly Linked List Unshift operation (ADDITION FROM FIRST)
+    1. This function should accept a value.
+    2. Create a new node using the value passed to the function.
+    3. If there is no head property on the list, set the head and tail to be the newly created one.
+    4. Otherwise, set the newly created nod's nect property to be the current head property on the list.
+    5. Set the head property on the list to be the newly created node.
+    6. Increment the length of the list by 1.
+    7. Return the linked list.
+    */
+
+    unshift(val){
+        let newNode = new Node(val);
+        if(!this.head){
+            this.head = newNode;
+            this.tail = newNode;
+        } else{
+            newNode.next = this.head;
+            this.head = newNode;
+        }
+        this.length++;
+        return this;
+    }
+
 }
 
 var list = new SinglyLinkedList()
