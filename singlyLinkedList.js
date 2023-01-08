@@ -136,6 +136,37 @@ class SinglyLinkedList {
         }
     }
 
+    /*
+    ------- Pseudocode for Singly Linked List Insert operation (INSERTING SPECIFIC NODE FROM THE LIST)
+    1. If the index is less than zero or greater than the length, return false.
+    2. If the index is the same as the length, push a new node to the end of the list.
+    3. If the index is 0, unshift a new node to the start of the list.
+    4. Otherwise, using the get method, access the node at the index - 1.
+    5. Set the next property on that node to be the new node.
+    6. Set the next property on the new node to be the previous next.
+    7. Increment the length.
+    8. Return true.
+    */
+
+    insert(index, val){
+        if(index < 0 || index > length) return false
+        if(index === this.length){
+            this.push(val)
+            return true
+        }
+        if(index === 0){
+            this.unshift(val)
+            return true
+        }
+        let newNode = new Node(val)
+        let prev = this.get(index - 1)
+        let temp = prev.next
+        prev.next = newNode
+        newNode.next = temp
+        this.length++
+        return true
+    }
+
 }
 
 var list = new SinglyLinkedList()
