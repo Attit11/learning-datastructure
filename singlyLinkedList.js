@@ -99,6 +99,25 @@ class SinglyLinkedList {
         return this;
     }
 
+
+    /* 
+    ------- Pseudocode for Singly Linked List Get operation (FINDING SPECIFIC NODE FROM THE LIST)
+    1. This function should accept an index.
+    2. If the index is less than zero or greater than or equal tp the length of the list return null.
+    3. Loop through the list until you reach the index and return the node at the specific index.
+    */
+    get(index){
+        if(index < 0 || index >= this.length) return null;
+        var counter = 0;
+        var current = this.head
+        while(counter !== index){
+            current = current.next
+            counter++
+        }
+        return current
+
+    }
+
 }
 
 var list = new SinglyLinkedList()
@@ -123,5 +142,7 @@ console.log("-------------------------------------------------")
 console.log("Unshifting from the list")
 console.log(list.unshift("Pink Floyd!"))
 
-
+console.log("-------------------------------------------------")
+console.log("Get the specific index")
+console.log(list.get(3))
 
