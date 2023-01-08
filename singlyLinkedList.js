@@ -58,6 +58,23 @@ class SinglyLinkedList {
         }
         return this.head;
     }
+
+    /* 
+    ------- Pseudocode for Singly Linked List Shift operation
+    1. If there are no nodes, return undefined.
+    2. Store the current head property in a variable.
+    3. Set the head property to be the current head's next property.
+    4. Decrement the length by 1.
+    */   
+
+    shift(){
+        if(!this.head) return undefined
+        var currentHead = this.head
+        this.head = currentHead.next
+        this.length--
+        return currentHead //this is what we took off
+    }
+
 }
 
 var list = new SinglyLinkedList()
