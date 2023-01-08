@@ -115,5 +115,13 @@ console.log("-------------------------------------------------")
 console.log("Popping from the list")
 console.log(list.pop())
 
+console.log("-------------------------------------------------")
+console.log("Shifting from the list")
+console.log(list.shift())
+
+console.log("-------------------------------------------------")
+console.log("Unshifting from the list")
+console.log(list.unshift("Pink Floyd!"))
+
 
 
