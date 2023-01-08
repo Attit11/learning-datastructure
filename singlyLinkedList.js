@@ -118,6 +118,24 @@ class SinglyLinkedList {
 
     }
 
+    /*
+    ------- Pseudocode for Singly Linked List Set operation (EDITING SPECIFIC NODE FROM THE LIST)
+    1. This function should accept a value and an index
+    2. Use your get function to find the specific node.
+    3. If the node is not found, return false.
+    4. If the node is found, set the value of that node to be the value passed to the dunction and return true.
+    */
+    set(index, val){
+        var foundNode = this.get(index);
+        if(foundNode){
+            foundNode.val = val
+            console.log("THIS IS FROM SET METHOD", this)
+            return true
+        }else{
+            return false
+        }
+    }
+
 }
 
 var list = new SinglyLinkedList()
@@ -130,6 +148,7 @@ list.push("Side")
 list.push("Of")
 list.push("The")
 console.log(list.push("Moon"))
+
 console.log("-------------------------------------------------")
 console.log("Popping from the list")
 console.log(list.pop())
@@ -145,4 +164,8 @@ console.log(list.unshift("Pink Floyd!"))
 console.log("-------------------------------------------------")
 console.log("Get the specific index")
 console.log(list.get(3))
+
+console.log("-------------------------------------------------")
+console.log("set at the specific index")
+console.log(list.set(0, "Hello"))
 
