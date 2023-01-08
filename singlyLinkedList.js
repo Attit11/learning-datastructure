@@ -60,7 +60,7 @@ class SinglyLinkedList {
     }
 
     /* 
-    ------- Pseudocode for Singly Linked List Shift operation
+    ------- Pseudocode for Singly Linked List Shift operation (REMOVE FROM FIRST)
     1. If there are no nodes, return undefined.
     2. Store the current head property in a variable.
     3. Set the head property to be the current head's next property.
