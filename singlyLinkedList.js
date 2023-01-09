@@ -167,6 +167,25 @@ class SinglyLinkedList {
         return true
     }
 
+    /*
+    ------- Pseudocode for Singly Linked List Remove operation (REMOVING SPECIFIC NODE FROM THE LIST)
+    1. If the index is less than zero or greater than the length, return undefined.
+    2. If the index is same as the length - 1, pop. 
+    3. If the index is 0, shift.
+    4. Otherwise, using the fet methodm access the node at the index - 1.
+    */
+
+   remove(index){
+        if(index<0 || index >= this.length) return undefined;
+        if(index === 0) return this.shift();
+        if(index === this.length - 1) return this.pop()
+        var previousNode = this.get(index - 1)
+        var removed = previousNode.next
+        this.length--
+        return removed
+   }
+
+
 }
 
 var list = new SinglyLinkedList()
@@ -200,3 +219,6 @@ console.log("-------------------------------------------------")
 console.log("set at the specific index")
 console.log(list.set(0, "Hello"))
 
+console.log("-------------------------------------------------")
+console.log("remove at the specific index")
+console.log(list.remove(2))
